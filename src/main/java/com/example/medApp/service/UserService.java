@@ -15,7 +15,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User login(String email, String password) {
+    public User loginUser(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password)
                 .orElseThrow(() -> new ResourceNotFoundException("Invalid credentials"));
     }
